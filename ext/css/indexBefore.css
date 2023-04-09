@@ -1,0 +1,196 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.6/static/pretendard-dynamic-subset.css");
+/* 전역 설정 */
+
+* {
+    font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+}
+
+/* body area grid  */
+#area {
+    /*background setting - 이미지 유지, 크기 맞추기  */
+    background: url('../image/000background.jpg') no-repeat center center;
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    position: relative;
+}
+
+#area:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.04) url('../image/over.png') center repeat;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+/* header (nav) area*/
+
+#navItem {
+    padding: 1rem 0 1rem 0;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 100);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "nth1St . . . . nth6Th";
+    grid-gap: 10rem;
+    place-items: center;
+    justify-content: space-between;
+}
+
+/* grid 이름 정의 */
+.nth1St {
+    grid-area: nth1St;
+}
+
+.nth6Th {
+    grid-area: nth6Th;
+}
+
+/* main area */
+
+#main {
+    /* font color*/
+    color: rgba(255, 255, 255, 100);
+    text-align: center;
+    /* grid setting  */
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr 1.2fr 0.8fr;
+    grid-template-rows: 1fr 1fr 1fr 0.5fr;
+    grid-template-areas:
+            ". clockFt clockFt ."
+            ". inputCub musicBoxCont ."
+            ". todoCub todoCub ."
+            "footer footer footer footer";
+    grid-gap: 2rem;
+    align-content: center;
+    justify-content: center;
+    place-items: center;
+}
+
+#inputCub {
+    grid-area: inputCub;
+}
+
+#todoCub {
+    grid-area: todoCub;
+}
+
+#musicBoxCont {
+    grid-area: musicBoxCont;
+    margin: 1rem 0 1rem;
+}
+
+#footer {
+    grid-area: footer;
+    align-self: end;
+    padding: 5rem
+}
+
+
+#clockFt {
+    grid-area: clockFt;
+    font-weight: 800;
+    padding: 2rem 8rem;
+    font-size: 5.5rem;
+    border: 0.6rem solid white;
+}
+
+
+#loginFrom {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+
+.hidden {
+    display: none;
+}
+
+#greeting {
+    font-size: 3rem;
+}
+
+
+/* todoList  */
+
+.inputBox {
+    font-size: 1.7rem;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    outline: 2px solid white;
+    border: 0;
+    height: 3rem;
+    width: 40rem;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.input:focus {
+    outline: 2px solid white;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.49);
+}
+
+.todoSpan {
+    margin: 1rem;
+}
+
+.todoBtn {
+    --b: 1px; /* border thickness */
+    --s: 0.1rem; /* size of the corner */
+    --color: #ffffff;
+
+    padding: calc(0.2rem + var(--s)) calc(0.5rem + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background: conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2 * var(--_p)) calc(100% - var(--b) - 2 * var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.todoBtn:hover,
+.todoBtn:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.todoBtn:active {
+    background: var(--color);
+    color: #fff;
+}
+
+#todoList {
+    font-size: 1.6rem;
+    font-weight: 700;
+    list-style-type: circle;
+    list-style-position: inside;
+}
+a{
+    color: white;
+}
+a:link{
+    color: white;
+    text-decoration-line:none;
+}
+a:hover{
+    color: rgba(255, 255, 255, 0.7);
+}

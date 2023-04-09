@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Lofi Playlist & TodoList</title>
+    <!-- bootStrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            todolist
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- font-awesome  -->
+    <script src="https://kit.fontawesome.com/034c7fe002.js" crossorigin="anonymous"></script>
+    <!--  css    -->
+    <link rel="stylesheet" href="ext/css/indexBefore.css">
+    <link rel="stylesheet" href="ext/css/player.css">
+    <!-- -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body id="area">
+
+<div id="header">
+    <nav id="navItem">
+        <!--        weather Api Ui-->
+        <div class="nth1St">
+            <div class="weather container text-center ">
+                <div class="row align-items-center">
+                    <div class="CurrIcon col"></div>
+                    <div class="CurrTemp col"></div>
+                </div>
+                <div>
+                    <div class="City"></div>
+                </div>
+            </div>
+        </div>
+        <div class="nth6Th">
+            <!--  scroll to to-do list -->
+            <div><a href="#todoCub">todolist</a></div>
+        </div>
+    </nav>
+</div>
+
+<div id="main">
+
+    <div id="clockFt">
+        <span id="date" class="date"></span>
+        <br>
+        <span id="time" class="time"></span>
+    </div>
+
+
+    <div id="inputCub">
+        <form id="loginFrom" class="hidden">
+            <input type="text" class="inputBox" maxlength="15" placeholder="May I Get Your Name?" required>
+            <input type="submit" class="btn btn-outline-light" value="Log In">
+        </form>
+
+        <div id="greeting"></div>
+    </div>
+
+    <div id="musicBoxCont" class="container">
+        <div class="player">
+            <div class="cover">
+                <img src="../ext/image/albumphoto.jpg" alt="">
+            </div>
+            <div class="info">
+                <div class="title">LoFi for you who are <br>left alone after apocalypse</div>
+                <div class="singer"><a href="https://www.youtube.com/@daymoon_playlist" target="_blank">Playlist - 낮달</a></div>
+            </div>
+            <div class="volume-box">
+                <span class="volume-down"><i class="fa-solid fa-volume-low"></i></span>
+                <input type="range" class="volume-range" step="1" value="80" min="0" max="100" oninput="music.volume = this.value/100">
+                <span class="volume-up"><i class="fa-solid fa-volume-high"></i></span>
+            </div>
+            <div class="btn-box">
+                <i class="fa-solid fa-rotate-right repeat" onclick="handleRepeat()"></i>
+                <i class="fa-solid fa-heart favorite active" onclick="handleFavorite()"></i>
+                <i class="fa-solid fa-volume-high volume" onclick="handleVolume()"></i>
+            </div>
+            <div class="music-box">
+
+                <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
+
+                <audio class="music-element">
+                    <source src="../ext/murl/playlist.mp3" type="audio/mp3">
+                </audio>
+                <span class="current-time">0:0</span>
+                <span class="duration"></span>
+                <span class="play" onclick="handlePlay()">
+                <i class="fa-solid fa-play"></i>
+            </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="todoCub">
+        <form id="todoForm">
+            <input type="text" class="inputBox" placeholder="오늘 당신이 할 일은 무엇이 있나요?" required>
+        </form>
+        <ul id="todoList"></ul>
+    </div>
+    <div id="footer">
+        <div>Web Designed by <i class="fa-brands fa-github"> <a href="https://github.com/logidell?tab=repositories" target="_blank">Logidell</a></i> , <i class="fa-solid fa-at"> <a
+                href="mailto:yuhiee123@gmail.com">Mail</a> </i> | PlayList by <i class="fa-brands fa-youtube"> <a href="https://www.youtube.com/@daymoon_playlist">낮달</a> </i> | Background Image <a
+                href="https://www.artstation.com/artwork/G8Lvya">Daniel Yosef Abdu</a></div>
+        <div>해당 사이트는 사적인 목적을 취하지 않으며, 등록된 이미지와 음악 등 삭제 요청이 들어올 경우 삭제할 예정입니다.</div>
+    </div>
+
+</div>
+
+<!--javascript -->
+<script src="ext/Js/weather.js"></script>
+<script src="ext/Js/clock.js"></script>
+<script src="ext/Js/loginform.js"></script>
+<script src="ext/Js/todolist.js"></script>
+<script src="ext/Js/player.js"></script>
+</body>
+</html>
